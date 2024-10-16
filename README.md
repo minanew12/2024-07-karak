@@ -15,9 +15,6 @@
 
 ## Automated Findings / Publicly Known Issues
 
-The 4naly3er report can be found [here](https://github.com/code-423n4/2024-07-karak/blob/main/4naly3er-report.md).
-The Slither report can be found [here](https://github.com/code-423n4/2024-07-karak/blob/main/slither.md).
-
 _Note for C4 wardens: Anything included in this `Automated Findings / Publicly Known Issues` section is considered a publicly known issue and is ineligible for awards._
 
 - Vaults are not meant to handle rewards distribution since rewards are non-linear, can be frontrun if sent to the vault, and not always in the same underlying token. Instead an off-chain indexer should compute the distribution and the DSS can use a Merkle drop to distribute rewards.
