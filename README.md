@@ -15,8 +15,6 @@
 
 ## Automated Findings / Publicly Known Issues
 
-_Note for C4 wardens: Anything included in this `Automated Findings / Publicly Known Issues` section is considered a publicly known issue and is ineligible for awards._
-
 - Vaults are not meant to handle rewards distribution since rewards are non-linear, can be frontrun if sent to the vault, and not always in the same underlying token. Instead an off-chain indexer should compute the distribution and the DSS can use a Merkle drop to distribute rewards.
 - If an operator initiates unstaking of a Vault or NativeVault from a DSS, DSS should stop immediately considering the corresponding vault’s stake for off-chain rewards compute. The withdrawal delay is meant to ensure that the DSS has enough time to slash the vault before it can be withdrawn. Sitting on a queued withdraw doesn't provide a operator any edge.
 - Similarly if a staker starts withdrawal from a Vault or NativeVault, the DSS should stop considering those assets for voting weight and rewards
